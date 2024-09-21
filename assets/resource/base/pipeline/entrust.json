@@ -13,6 +13,7 @@
         "recognition": "OCR",
         "expected": "委托",
         "action": "Click",
+        "post_delay": 3000,
         "next": [
             "GainEntrustAwards",
             "DoEntrust",
