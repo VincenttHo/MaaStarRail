@@ -1,17 +1,8 @@
 {
     "controller": [
         {
-            "name": "安卓端",
+            "name": "android",
             "type": "Adb"
-        },
-        {
-            "name": "桌面端",
-            "type": "Win32",
-            "win32": {
-                "method": "Search",
-                "class_name": ".*",
-                "window_name": "Visual Studio"
-            }
         }
     ],
     "resource": [
@@ -20,52 +11,519 @@
             "path": [
                 "{PROJECT_DIR}/resource/base"
             ]
-        },
-        {
-            "name": "B 服",
-            "path": [
-                "{PROJECT_DIR}/resource/base",
-                "{PROJECT_DIR}/resource/bilibili"
-            ]
         }
     ],
     "task": [
         {
-            "name": "普通任务",
-            "entry": "MyTask1"
+            "name": "登录",
+            "entry": "Login"
         },
         {
-            "name": "选项任务",
-            "entry": "MyTask2",
+            "name": "刷体力",
+            "entry": "Combat",
             "option": [
-                "任务选项1"
+                "作战关卡"
             ]
         },
         {
-            "name": "参数任务",
-            "entry": "MyTask3",
-            "option": [
-                "任务选项1"
-            ],
-            "param": {}
+            "name": "委托",
+            "entry": "Entrust"
+        },
+        {
+            "name": "获取日常奖励",
+            "entry": "GainDayAwards"
         }
     ],
     "option": {
-        "任务选项1": {
+        "作战关卡": {
             "cases": [
                 {
-                    "name": "文本1",
-                    "param": {
-                        "OcrTask": {
-                            "text": "文本1"
+                    "name": "遗器-勇骑之径（铁骑，勇烈）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "侵蚀隧洞"
+                        },
+                        "FindMission": {
+                            "expected": "勇骑之径"
+                        },
+                        "Transform": {
+                            "expected": "勇骑之径"
                         }
                     }
                 },
                 {
-                    "name": "文本2",
-                    "param": {
-                        "OcrTask": {
-                            "text": "文本2"
+                    "name": "遗器-梦潜之径（先驱，钟表匠）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "侵蚀隧洞"
+                        },
+                        "FindMission": {
+                            "expected": "梦潜之径"
+                        },
+                        "Transform": {
+                            "expected": "梦潜之径"
+                        }
+                    }
+                },
+                {
+                    "name": "遗器-幽冥之径（大公，系囚）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "侵蚀隧洞"
+                        },
+                        "FindMission": {
+                            "expected": "幽冥之径"
+                        },
+                        "Transform": {
+                            "expected": "幽冥之径"
+                        }
+                    }
+                },
+                {
+                    "name": "遗器-药使之径（莳者，信使）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "侵蚀隧洞"
+                        },
+                        "FindMission": {
+                            "expected": "药使之径"
+                        },
+                        "Transform": {
+                            "expected": "药使之径"
+                        }
+                    }
+                },
+                {
+                    "name": "遗器-野焰之径（火匠，废土客）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "侵蚀隧洞"
+                        },
+                        "FindMission": {
+                            "expected": "野焰之径"
+                        },
+                        "Transform": {
+                            "expected": "野焰之径"
+                        }
+                    }
+                },
+                {
+                    "name": "遗器-圣颂之径（圣骑士，乐队）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "侵蚀隧洞"
+                        },
+                        "FindMission": {
+                            "expected": "圣颂之径"
+                        },
+                        "Transform": {
+                            "expected": "圣颂之径"
+                        }
+                    }
+                },
+                {
+                    "name": "遗器-睿治之径（铁卫，天才）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "侵蚀隧洞"
+                        },
+                        "FindMission": {
+                            "expected": "睿治之径"
+                        },
+                        "Transform": {
+                            "expected": "睿治之径"
+                        }
+                    }
+                },
+                {
+                    "name": "遗器-漂泊之径（过客，快枪手）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "侵蚀隧洞"
+                        },
+                        "FindMission": {
+                            "expected": "漂泊之径"
+                        },
+                        "Transform": {
+                            "expected": "漂泊之径"
+                        }
+                    }
+                },
+                {
+                    "name": "遗器-迅拳之径（拳王，怪盗）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "侵蚀隧洞"
+                        },
+                        "FindMission": {
+                            "expected": "迅拳之径"
+                        },
+                        "Transform": {
+                            "expected": "迅拳之径"
+                        }
+                    }
+                },
+                {
+                    "name": "遗器-霜风之径（猎人，翔鹰）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "侵蚀隧洞"
+                        },
+                        "FindMission": {
+                            "expected": "霜风之径"
+                        },
+                        "Transform": {
+                            "expected": "霜风之径"
+                        }
+                    }
+                },
+                {
+                    "name": "角色狗粮",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "经验材料"
+                        },
+                        "FindMission": {
+                            "expected": "回忆之蕾"
+                        },
+                        "Transform": {
+                            "expected": "回忆之蕾"
+                        }
+                    }
+                },
+                {
+                    "name": "武器狗粮",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "经验材料"
+                        },
+                        "FindMission": {
+                            "expected": "以太之蕾"
+                        },
+                        "Transform": {
+                            "expected": "以太之蕾"
+                        }
+                    }
+                },
+                {
+                    "name": "钱",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "经验材料"
+                        },
+                        "FindMission": {
+                            "expected": "藏珍之蕾"
+                        },
+                        "Transform": {
+                            "expected": "藏珍之蕾"
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-月狂獠牙（毁灭）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "HuiMie1.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "HuiMie1.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-净世残刃（毁灭）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "HuiMie2.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "HuiMie2.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-神体琥珀（存护）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "CunHu1.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "CunHu1.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-琥珀的坚守（存护）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "CunHu2.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "CunHu2.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-逆时一击（巡猎）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "XunLie1.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "XunLie1.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-逐星之矢（巡猎）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "XunLie2.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "XunLie2.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-万相果实（丰饶）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "FengRao1.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "FengRao1.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-永恒之花（丰饶）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "FengRao2.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "FengRao2.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-精致色稿（智识）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "ZhiShi1.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "ZhiShi1.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-智识之钥（智识）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "ZhiShi2.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "ZhiShi2.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-天外乐章（同协）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "TongXie1.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "TongXie1.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-群星乐章（同协）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "TongXie2.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "TongXie2.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-焚天之魔（虚无）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "XuWu1.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "XuWu1.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技能材料-沉沦黑曜（虚无）",
+                    "pipeline_override": {
+                        "IntoMissionType": {
+                            "expected": "行迹材料"
+                        },
+                        "FindMission": {
+                            "recognition": "TemplateMatch",
+                            "template": "XuWu2.png"
+                        },
+                        "Transform": {
+                            "recognition": "TemplateMatch",
+                            "template": "XuWu2.png",
+                            "target_offset": [
+                                600,
+                                0,
+                                0,
+                                0
+                            ]
                         }
                     }
                 }

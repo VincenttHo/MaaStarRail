@@ -1,0 +1,33 @@
+{
+    "GainDayAwards": {
+        "recognition": "TemplateMatch",
+        "template": "MissionButton.png",
+        "action": "Click",
+        "next": "IntoAwards"
+    },
+    "IntoAwards": {
+        "recognition": "TemplateMatch",
+        "template": ["IntoAwardsButton.png", "IntoAwardsButton-White.png"],
+        "action": "Click",
+        "next": "GainActivity"
+    },
+    "GainActivity": {
+        "next": ["DoGainActivity", "FinishDayAwards"]
+    },
+    "DoGainActivity": {
+        "recognition": "TemplateMatch",
+        "template": "GainActivityButton.png",
+        "action": "Click",
+        "next": "GainActivity"
+    },
+    "FinishDayAwards": {
+        "recognition": "TemplateMatch",
+        "template": "DayAwards.png",
+        "action": "Click"
+    },
+    "AfterGainDayAwards": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click"
+    }
+}

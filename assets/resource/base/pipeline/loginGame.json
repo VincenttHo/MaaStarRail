@@ -1,0 +1,69 @@
+{
+    "Login": {
+        "next": [
+            "LoginGame",
+            "GainAwards",
+            "LoginSuccess",
+            "BlackScreen",
+            "Title",
+            "TitleLoading",
+            "Loading"
+        ]
+    },
+    "LoginSuccess": {
+        "recognition": "TemplateMatch",
+        "template": "MissionButton.png"
+    },
+    "LoginGame": {
+        "recognition": "TemplateMatch",
+        "template": "LoginButton.png",
+        "action": "Click",
+        "next": [
+            "IntoGame"
+        ]
+    },
+    "IntoGame": {
+        "next": [
+            "GainAwards",
+            "LoginSuccess",
+            "LoginGame-BlackScreen",
+            "Loading"
+        ]
+    },
+    "GainAwards": {
+        "recognition": "TemplateMatch",
+        "template": "Awards.png",
+        "action": "Click"
+    },
+    "TitleLoading": {
+        "recognition": "TemplateMatch",
+        "template": "TitleLoading.png",
+        "action": "Click",
+        "next": "Login"
+    },
+    "Loading": {
+        "recognition": "TemplateMatch",
+        "template": "Loading.png",
+        "action": "Click",
+        "next": "IntoGame"
+    },
+    "BlackScreen": {
+        "recognition": "ColorMatch",
+        "lower": [0,0,0],
+        "upper": [0,0,0],
+        "roi": [ 296, 115.5, 678, 447 ],
+        "next": "Login"
+    },
+    "LoginGame-BlackScreen": {
+        "recognition": "ColorMatch",
+        "lower": [0,0,0],
+        "upper": [0,0,0],
+        "roi": [ 296, 115.5, 678, 447 ],
+        "next": "IntoGame"
+    },
+    "Title": {
+        "recognition": "OCR",
+        "expected": ["健康游戏忠告", "游戏前详阅"],
+        "next": "Login"
+    }
+}

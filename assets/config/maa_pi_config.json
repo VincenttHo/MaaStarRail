@@ -1,0 +1,23 @@
+{
+    "controller": {
+        "name": "android",
+        "type": "Adb"
+    },
+    "adb": {
+        "adb_path": "C:/Program Files/BlueStacks_nxt/HD-Adb.exe",
+        "address": "127.0.0.1:5555",
+        "config": {}
+    },
+    "resource": "官服",
+    "task": [
+        {
+            "name": "日常",
+            "option": [
+                {
+                    "name": "作战关卡",
+                    "value": "遗器-药使之径"
+                }
+            ]
+        }
+    ]
+}

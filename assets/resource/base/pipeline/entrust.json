@@ -1,0 +1,62 @@
+{
+    "Entrust": {
+        "next": "OpenPhone"
+    },
+    "OpenPhone": {
+        "recognition": "TemplateMatch",
+        "template": "Phone.png",
+        "roi": [ 6, 8.5, 120, 113 ],
+        "action": "Click",
+        "next": "IntoEntrust"
+    },
+    "IntoEntrust": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "Click",
+        "next": [
+            "GainEntrustAwards",
+            "DoEntrust",
+            "AfterEntrust"
+        ]
+    },
+    "GainEntrustAwards": {
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "action": "Click",
+        "next": "DoEntrust"
+    },
+    "DoEntrust": {
+        "recognition": "OCR",
+        "expected": ["再次派遣"],
+        "action": "Click",
+        "next": "AfterEntrust"
+    },
+    "AfterEntrust": {
+        "next": [
+            "WaitNotice",
+            "ExitToHome"
+        ]
+    },
+    "WaitNotice": {
+        "recognition": "OCR",
+        "expected": "开始委托",
+        "next": "AfterEntrust"
+    },
+    "ExitToHome": {
+        "next": [
+            "IsAtHome",
+            "DoExit"
+        ]
+    },
+    "DoExit": {
+        "recognition": "TemplateMatch",
+        "template": "ExitButton.png",
+        "action": "Click",
+        "next": "ExitToHome"
+    },
+    "IsAtHome": {
+        "recognition": "TemplateMatch",
+        "template": "Phone.png",
+        "roi": [ 6, 8.5, 120, 113 ]
+    }
+}

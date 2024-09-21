@@ -1,0 +1,113 @@
+{
+    "Combat": {
+        "recognition": "TemplateMatch",
+        "template": "MissionButton.png",
+        "action": "Click",
+        "next": "SelectMission"
+    },
+    "SelectMission": {
+        "recognition": "TemplateMatch",
+        "template": ["IntoMissionButton.png", "IntoMissionButton-White.png"],
+        "action": "Click",
+        "next": "IntoMissionType"
+    },
+    "IntoMissionType": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "DoFindMission"
+    },
+    "ToEquiment": {
+        "recognition": "TemplateMatch",
+        "template": "EquimentButton.png",
+        "action": "Click",
+        "next": "DoFindMission"
+    },
+    "DoFindMission": {
+        "next":[
+            "FindMission",
+            "FindMissionSwipe"
+        ]
+    },
+    "FindMission": {
+        "recognition": "OCR",
+        "action": "DoNothing",
+        "next": "Transform"
+    },
+    "FindMissionSwipe": {
+        "action": "Swipe",
+        "begin": [ 715, 512.5, 31, 20 ],
+        "end": [ 724, 400.5, 30, 22 ],
+        "next": "DoFindMission"
+    },
+    "Transform": {
+        "recognition": "OCR",
+        "action": "Click",
+        "target": true,
+        "target_offset": [
+            500,
+            0,
+            0,
+            0
+        ],
+        "next": "Battle"
+    },
+    "Battle": {
+        "recognition": "TemplateMatch",
+        "template": "Battle.png",
+        "action": "Click",
+        "next": [
+            "StartBattle",
+            "NoPower"
+        ]
+    },
+    "StartBattle": {
+        "recognition": "TemplateMatch",
+        "template": "StartBattle.png",
+        "action": "Click",
+        "next": "AutoBattle"
+    },
+    "AutoBattle": {
+        "recognition": "TemplateMatch",
+        "template": "AutoBattle.png",
+        "action": "Click",
+        "next": [
+            "Replay",
+            "Battling"
+        ]
+    },
+    "Replay": {
+        "recognition": "OCR",
+        "expected": "再来一次",
+        "action": "Click",
+        "next": "DoReplay"
+    },
+    "DoReplay": {
+        "next":[
+            "NoPower",
+            "Battling",
+            "Replay"
+        ]
+    },
+    "Battling": {
+        "recognition": "TemplateMatch",
+        "template": "BattlePause.png",
+        "next": "DoReplay"     
+    },
+    "NoPower": {
+        "recognition": "OCR",
+        "expected": ["开拓力补充","取消"],
+        "order_by": "Vertical",
+        "index": 1,
+        "action": "Click",
+        "next": [
+            "ExitBattle",
+            "ExitToHome"
+        ]
+    },
+    "ExitBattle": {
+        "recognition": "OCR",
+        "expected": "退出关卡",
+        "action": "Click"
+    }
+
+}
