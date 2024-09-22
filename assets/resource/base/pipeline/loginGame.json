@@ -31,9 +31,10 @@
         ]
     },
     "GainAwards": {
-        "recognition": "TemplateMatch",
-        "template": "Awards.png",
-        "action": "Click"
+        "recognition": "OCR",
+        "expected": "点击领取",
+        "action": "Click",
+        "next": "IntoGame"
     },
     "TitleLoading": {
         "recognition": "TemplateMatch",

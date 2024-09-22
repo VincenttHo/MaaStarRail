@@ -23,7 +23,8 @@
     "FinishDayAwards": {
         "recognition": "TemplateMatch",
         "template": "DayAwards.png",
-        "action": "Click"
+        "action": "Click",
+        "next": "AfterGainDayAwards"
     },
     "AfterGainDayAwards": {
         "recognition": "OCR",
