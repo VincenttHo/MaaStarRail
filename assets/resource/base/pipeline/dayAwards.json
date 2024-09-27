@@ -29,6 +29,7 @@
     "AfterGainDayAwards": {
         "recognition": "OCR",
         "expected": "点击空白处关闭",
-        "action": "Click"
+        "action": "Click",
+        "next": "ExitToHome"
     }
 }

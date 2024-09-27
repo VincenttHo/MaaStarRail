@@ -11,13 +11,8 @@
     "resource": "官服",
     "task": [
         {
-            "name": "日常",
-            "option": [
-                {
-                    "name": "作战关卡",
-                    "value": "遗器-药使之径"
-                }
-            ]
+            "name": "登录",
+            "option": []
         }
     ]
 }

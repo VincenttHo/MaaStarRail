@@ -32,6 +32,14 @@
         {
             "name": "获取日常奖励",
             "entry": "GainDayAwards"
+        },
+        {
+            "name": "获取周常奖励",
+            "entry": "WeeklyAwards"
+        },
+        {
+            "name": "回到首页",
+            "entry": "ExitToHome"
         }
     ],
     "option": {
