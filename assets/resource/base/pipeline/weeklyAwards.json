@@ -1,0 +1,37 @@
+{
+    "WeeklyAwards": {
+        "recognition": "TemplateMatch",
+        "template": "WeeklyAwardsButton.png",
+        "action": "Click",
+        "next": "GotoWeeklyAwardsPage"
+    },
+    "GotoWeeklyAwardsPage": {
+        "recognition": "TemplateMatch",
+        "template": "WeeklyAwardsMissionButton.png",
+        "action": "Click",
+        "post_delay": 3000,
+        "next": ["GainWeeklyMissionAwards","GotoWeeklyAwardsSubPage"]
+    },
+    "GainWeeklyMissionAwards": {
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "roi": [ 858, 591.5, 369, 121 ],
+        "action": "Click",
+        "post_delay": 3000,
+        "next": "GotoWeeklyAwardsSubPage"
+    },
+    "GotoWeeklyAwardsSubPage": {
+        "recognition": "TemplateMatch",
+        "template": "WeeklyAwards.png",
+        "roi": [ 31, 91.5, 55, 56 ],
+        "action": "Click",
+        "next": "GainWeeklyAwards"
+    },
+    "GainWeeklyAwards": {
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "roi": [ 758.3636382063405, 640.1373953750056, 211.27685791270537, 61.159090448414716 ],
+        "action": "Click",
+        "next": "AfterGainDayAwards"
+    }
+}
